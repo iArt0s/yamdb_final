@@ -83,9 +83,9 @@ class Title(models.Model):
     def __str__(self):
         return self.name
 
-    def validate_year(value):
+    def validate_year(self):
         """Метод, позволяющий отследить корректный год выпуска произведения."""
-        if value > timezone.now().year:
+        if self > timezone.now().year:
             raise ValidationError(
                 {'year': ('Год выпуска не может быть в будущем!')}
             )
