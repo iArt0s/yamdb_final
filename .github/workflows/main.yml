@@ -28,7 +28,15 @@ jobs:
           # установка зависимостей
           pip install -r api_yamdb/requirements.txt
 
-      - name: Test with flake8 and yandex tests
+      - name: Test with flake8 and django tests
         run: |
+          # запуск проверки проекта по flake8
           python -m flake8
-          python -m pytest
+
+          # запуск проверки проекта по flake8
+          python -m flake8
+          # перейти в папку, содержащую manage.py — 
+          #<корневая_папка_infra_actions>/<папка_проекта>/manage.py
+          cd infra
+          # запустить написанные разработчиком тесты
+          python manage.py test
