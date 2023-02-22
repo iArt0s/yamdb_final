@@ -34,8 +34,5 @@ jobs:
           python -m flake8
           # запуск проверки проекта по flake8
           python -m flake8
-          # перейти в папку, содержащую manage.py — 
-          #api_yamdb/manage.py
-          cd infra/
-          # запустить написанные разработчиком тесты
+          cd api_yamdb/
           python manage.py test
