@@ -8,7 +8,10 @@ services:
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb/
+    image: iart0s/infra-web:v1
+    build:
+      context: ../
+      dockerfile: api_yamdb/Dockerfile
     restart: always
     volumes:
       - static_value:/app/static/
